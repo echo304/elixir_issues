@@ -14,7 +14,7 @@ defmodule Issues.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:gettext, :logger, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,10 @@ defmodule Issues.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      { :httpoison, "~> 0.9" },
+      { :poison, "~> 2.2" },
+      { :gettext, "~> 0.13" }
+    ]
   end
 end
